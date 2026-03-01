@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - MyGwejh</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">    <div id="app">
+        <header class="header-area sticky-top box-shadow-nav">
+            <nav class="navbar navbar-expand-lg py-3">
+                <div class="container">
+                    <a class="navbar-brand fw-bold text-uppercase d-flex align-items-center" href="#">
+                        <i class="fa-solid fa-laptop-code fs-3 me-2 text-primary-color"></i>
+                        {{ inisial }}
+                    </a>
+                    <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav gap-3 fw-medium">
+                            <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">ABOUT ME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#certificates">CERTIFICATES</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section id="home" class="hero-section d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 order-2 order-lg-1 mt-5 mt-lg-0 pe-lg-5">
+                        <span class="subtitle tracking-wider text-uppercase d-block mb-3">Welcome to my world</span>
+                        <h1 class="title font-montserrat fw-bold mb-4">
+                            Hi, I’m <span class="text-primary-color">{{ namaLengkap }}</span><br>
+                            a {{ peran }}
+                        </h1>
+                        <p class="description font-poppins mb-5">
+                            {{ deskripsiSingkat }}
+                        </p>
+                        <div class="d-flex gap-4">
+                            <div class="social-share">
+                                <span class="d-block mb-3 text-uppercase text-sm fw-medium">Find with me</span>
+                                <div class="d-flex gap-3">
+                                    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" class=" btn btn-neumorphism"><i class="fa-brands fa-github fs-4"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" class="btn btn-neumorphism"><i class="fa-brands fa-instagram fs-4"></i></a>
+                                </div>
+                            </div>
+                            <div class="best-skill">
+                                <span class="d-block mb-3 text-uppercase text-sm fw-medium">Best skill on</span>
+                                <div class="d-flex gap-3">
+                                    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" class="btn btn-neumorphism"><i class="fa-solid fa-database fs-4"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" class="btn btn-neumorphism"><i class="fa-brands fa-laravel fs-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 order-1 order-lg-2">
+                        <div class="thumbnail-box btn-neumorphism p-3 p-md-4">
+                            <img :src="profileImg" alt="Profile Image" class="img-fluid rounded-3 w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section py-section section-bg-separator">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="subtitle text-primary-color text-uppercase tracking-wider">Features</span>
+                    <h2 class="section-title font-montserrat fw-bold">About Me & Skills</h2>
+                </div>
+                <div class="row gy-5">
+                    <div class="col-lg-6 pe-lg-5">
+                        <h3 class="mb-4 font-montserrat fw-bold ">Experience & Projects</h3>
+                        <div class="resume-box">
+                            <div v-for="(exp, index) in pengalaman" :key="index" class="resume-item box-neumorphism p-4 mb-4 text-start">                                
+                                <h4 class="fw-bold mb-1 fs-5">{{ exp.posisi }}</h4>
+                                <span class="text-primary-color text-sm d-block mb-3">{{ exp.waktu }}</span>
+                                <p class="mb-0 text-muted">{{ exp.detail }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="mb-4 font-montserrat fw-bold ">Technical Skills</h3>
+                        <div class="skills-box box-neumorphism p-4 p-md-5">
+                            <div v-for="(skill, index) in skills" :key="index" class="skill-item mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-medium font-montserrat text-uppercase text-sm">{{ skill.nama }}</span>
+                                    <span class="text-muted text-sm">{{ skill.progress }}%</span>
+                                </div>
+                                <div class="progress progress-neumorphism">
+                                    <div class="progress-bar bg-primary-color" role="progressbar" :style="{ width: skill.progress + '%' }"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="portfolio-section py-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="subtitle text-primary-color text-uppercase tracking-wider">Achievement</span>
+                    <h2 class="section-title font-montserrat fw-bold">My Certificates</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" v-for="(cert, index) in sertifikat" :key="index">
+                        <div class="card border-0 portfolio-card box-neumorphism p-4 h-100 d-flex flex-column text-start">
+                            <div class="card-image mb-4 overflow-hidden rounded-3">
+                                <img :src="cert.gambar" alt="Certificate" class="img-fluid w-100 transition-scale">
+                            </div>
+                            <span class="text-primary-color text-uppercase text-sm fw-medium tracking-wider mb-2">{{ cert.penerbit }}</span>
+                            <h4 class="fw-bold font-montserrat fs-5 mb-0">
+                                <a href="#" class="text-decoration-none  card-title-hover">{{ cert.judul }}</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-area py-4 border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted font-poppins">© 2026. Dibuat dengan HTML, CSS, Bootstrap & Vue.js oleh {{ namaLengkap }}.</p>
+            </div>
+        </footer>
+
+    </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    inisial: 'MYBIO.',
+                    namaLengkap: 'Satria Rajawali',
+                    peran: 'Up and Coming Fullstack Developer',
+                    deskripsiSingkat: 'Saya Programer Sigma Penyuka Whip Pink dan Roblox. Saya merangkai antarmuka interaktif yang indah di frontend, dan membangun arsitektur sistem backend yang tak tertembus menggunakan Laravel serta ekosistem Java.',
+                    profileImg: '../assets/pp.jpeg',
+                    pengalaman: [
+                        { posisi: 'Aplikasi SEAMantau', waktu: 'Tugas Akhir', detail: 'Mengembangkan aplikasi java berbasis dekstop dengan API GDrive dalam Upaya pelaksanaan SDG 14.' },
+                        { posisi: 'Perancangan Toplogi untuk Politeknik Negeri Surabaya', waktu: 'Project Cisco', detail: 'Merancang Topologi untuk Polnes Maritim di Surabaya menggunakan Cisco Packet Tracer.' }
+                    ],
+                    skills: [
+                        { nama: 'HTML, CSS & Bootstrap 5', progress: 90 },
+                        { nama: 'Vue.js (Composition API)', progress: 65 },
+                        { nama: 'Flutter & Dart', progress: 85 },
+                        { nama: 'Cisco Packet Tracer', progress: 90 },
+                        { nama: 'PHP & Laravel', progress: 88 },
+                        { nama: 'MySQL', progress: 90 },
+                        { nama: 'Python', progress: 80 }
+
+                    ],
+                    sertifikat: [
+                        { judul: 'Belajar Forensik', penerbit: 'Inforsa', gambar: '../assets/Satria Rajawali Ektya Antara.jpg' },
+                        { judul: 'Belajar Cybersecurity', penerbit: 'Inforsa', gambar: '../assets/Satria Rajawali Ektya AntaraC (.jpg' },
+                    ]
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+   /* Variabel Global */
+   :root {
+    --bg-color: #151925; 
+    --primary-color: #6366f1; 
+    --text-heading: #f1f5f9; 
+    --text-body: #94a3b8; 
+    --border-color: #22283a; 
+    
+    --shadow-outset: 8px 8px 16px #0d1018, -8px -8px 16px #1d2232;
+    --shadow-inset: inset 8px 8px 16px #0d1018, inset -8px -8px 16px #1d2232;
+    --shadow-hover: 10px 10px 20px #090b11, -10px -10px 20px #212739;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-body);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+}
+
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.text-primary-color { color: var(--primary-color) !important; }
+.bg-primary-color { background-color: var(--primary-color) !important; }
+.tracking-wider { letter-spacing: 2px; }
+.text-sm { font-size: 14px; }
+.py-section { padding-top: 100px; padding-bottom: 100px; }
+
+
+   /* Komponen dan utilias */
+
+.btn-neumorphism {
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow-outset);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-heading);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Ikon Sosial Media */
+.social-share .btn-neumorphism, .best-skill .btn-neumorphism {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-neumorphism:hover {
+    transform: translateY(-5px);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Navbar */
+.header-area {
+    background-color: var(--bg-color);
+    transition: 0.3s;
+}
+
+.box-shadow-nav {
+    box-shadow: 0 10px 15px -10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    color: var(--text-body) !important;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 90vh;
+    padding-bottom: 50px;
+}
+
+.hero-section .title {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.2;
+}
+
+.thumbnail-box {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.thumbnail-box img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Section Border */
+.section-bg-separator {
+    border-top: 1px solid var(--border-color); 
+}
+
+/* Progress Bar Neumorphism */
+.progress-neumorphism {
+    background: var(--bg-color);
+    box-shadow: var(--shadow-inset);
+    height: 13px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* Portfolio Card */
+.portfolio-card {
+    border-radius: 20px;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image img {
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-title-hover {
+    transition: 0.3s;
+}
+
+.card-title-hover:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Footer Border */
+.border-top {
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.box-neumorphism {
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow-outset);
+    border-radius: 10px;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+.text-muted {
+    color: var(--text-body) !important;
+}
+
+.navbar-brand {
+    color: var(--text-heading) !important;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: var(--primary-color) !important;
+}
+
+.text-dark {
+    color: var(--text-heading) !important;
+}
